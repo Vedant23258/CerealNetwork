@@ -39,6 +39,6 @@ const __dirname = path.dirname(__filename);
 const frontendDistPath = path.join(__dirname, '../frontend/dist');
 
 app.use(express.static(frontendDistPath));
-app.get('/*', (req, res) => {
+app.get('/(.*)', (req, res) => {
   res.sendFile(path.join(frontendDistPath, 'index.html'));
 });
